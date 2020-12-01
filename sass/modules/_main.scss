@@ -8,3 +8,24 @@ body {
     background-color:#f5f5f5;
     font-family:helvetica;
 }
+
+.car-data { display: none; }
+
+.show-car { display: block !important; }
+
+.car-header { color: salmon; }
+
+.remove-car {
+    padding: 8px 12px; 
+    color: white;
+    background-color: #333;
+    border: thin solid blue;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    border-radius: 8px;
+
+    &:hover { background-color: blue; }
+}
+
+.car-button-modifier { text-decoration: none; }
