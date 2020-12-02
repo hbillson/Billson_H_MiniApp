@@ -14,7 +14,11 @@
         <nav id="main_nav">
             <div class="left">
                 <img class="nav_logo" alt="Mini Cooper Official Logo" src="images/logo.jpg">
-                <span><a href="#" class="nav_link">MODELS</a></span>
+                <div class="models"><span><a href="#" class="nav_link" id="models">MODELS</a></span>
+                    <img class="model_pic" id="0" alt="Mini 3-Door Image" title="Mini 3-Door" src="images/mini_3door.jpg">
+                    <img  class="model_pic" id="1" alt="Mini 3-Door Image" title="Mini 5-Door" src="images/mini_5door.jpg">
+                    <img  class="model_pic" id="2" alt="Mini 3-Door Image" title="Mini Countryman" src="images/mini_countryman.jpg">
+                </div>
                 <span><a href="#" class="nav_link">TOOLS</a></span>
                 <span><a href="#" class="nav_link">DISCOVER</a></span>
                 <span> <a href="#" class="nav_link">OWNERS</a></span>
@@ -28,10 +32,6 @@
         </nav>
     </header>
     <main id="app">
-        <!-- VUE THING 
-        <h1 @click="clickHeader">{{ message }}</h1>
-        <p>{{anotherMessage}}</p>
-        -->
 
         <!-- LANDING PAGE STUFF IN BASIC HTML
         <div class="container">
@@ -46,25 +46,25 @@
             </div>
         -->
 
-        <!-- MINI DATA DISPLAYED HERE 
-        <ul>-->
-            <!-- this is a custom Vue component defined in main.js 
-            <prof-card v-for="prof in professors" :prof="prof" :key="prof.id"></prof-card>-->
+        <!-- MINI DATA DISPLAYED HERE -->
+        <ul>
+            <!-- this is a custom Vue component defined in main.js -->
+            
+            <section id="container">
+                <car-info v-show="isShowing" v-for="car in cars" :car="car" :key="car.id" class="mini" ></car-info>
+            </section>
+           <!-- <h5 @click="clickHeader">{{ message }}</h1>
+                <p>{{anotherMessage}}</p>-->
+            <!-- <li v-for="car, index in cars">
+                <p>Car Name: {{ car.name }}</p>
 
-            <!-- <li v-for="prof, index in professors">
-                <p>Prof Name: {{ prof.name }}, Role: {{ prof.role }}</p>
-
-                <a href="" class="remove-prof" @click.prevent="showProfData(prof)" :class="{'prof-button-modifier' : removeAformat}">Show {{ prof.name}}'s info</a> 
+                <a href="" class="remove-car" @click.prevent="showCarData(car)" :class="{'car-button-modifier' : removeAformat}">Show {{ car.name}}'s info</a> 
                 
-                <a href="" class="remove-prof" @click.prevent="removeProf(index)" :class="{'prof-button-modifier' : removeAformat}">Remove {{ prof.name}}</a>
-            </li> 
-        </ul>-->
+                <a href="" class="remove-car" @click.prevent="removeCar(index)" :class="{'car-button-modifier' : removeAformat}">Remove {{ car.name}}</a>
+            </li> -->
+        </ul>
 
-        <!-- show more section 
-        <section class="bio-data" :class="{'show-bio' : showBioData}">
-            <h1>{{ currentProfData.name }}</h1>
-            <p> {{ currentProfData.nickname }}</p>
-        </section>-->
+
 
     </main>
     <footer id="main_footer">
