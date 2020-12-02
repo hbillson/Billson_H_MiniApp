@@ -16,15 +16,13 @@ export default {
 
     template: 
     `<li @click="logClicked">
-    <div :class="mini_container">
         <video width="100%" height="80%" controls>
             <source :src="'videos/' + car.video">
         </video>
         <img :src="'images/' + car.img">
-        <p>{{ car.name }}</p>
+        <h3>{{ car.name }}</h3>
         <p>{{ car.description }}</p>
         <p>Starting at $ {{ car.price }}!</p>
-    </div>
     </li>`,
 
     created: function () {
