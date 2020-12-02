@@ -35,26 +35,48 @@
             display:inline-flex;
             align-items:center;
             transition: .3s ease-in-out;
+
         }
 
         span:hover {
-            background-color:#f5f5f5;
             cursor:pointer;
             transition: .3s ease-in-out;
+            color:#a3b5d6;
         }
 
         .models {
+            display:none;
             height:100%;
             width:20%;
-            display:inline-flex;
+            display:flex;
             align-items:center;
             transition: .3s ease-in-out;
         }
 
         .models:hover {
-            height:160vh;
-            width:40vw;
+            background-color:#fff;
+            display:inline-flex;
+            flex-direction:column;
+            position:relative;
+            top:0;
+            left:0;
+            margin-top:70vh;
+            height:auto;
+            width:30vw;
             z-index:99;
+            transition: .3s ease-in-out;
+            padding:2vw;
+        }
+
+        .model_pic {
+            display:none;
+        }
+        .models:hover .model_pic {
+            width:100%;
+            margin:1vw;
+            display:inline-block;
+            transition: .3s ease-in-out;
+            cursor: pointer;
         }
     }
 

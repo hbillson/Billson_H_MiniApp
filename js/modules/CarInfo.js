@@ -7,8 +7,8 @@ export default {
     data: function() {
         return {
             myName: this.car.name,
+            myPic: this.car.img,
             myDesc: this.car.description,
-            myImage: this.car.img,
             myVideo: this.car.video,
             myPrice: this.car.price
         }
@@ -16,13 +16,15 @@ export default {
 
     template: 
     `<li @click="logClicked">
+    <div :class="mini_container">
         <video width="100%" height="80%" controls>
             <source :src="'videos/' + car.video">
         </video>
-        <img :src="'images/' + car.img" :alt='car.name + " image"'>
+        <img :src="'images/' + car.img">
         <p>{{ car.name }}</p>
         <p>{{ car.description }}</p>
         <p>Starting at $ {{ car.price }}!</p>
+    </div>
     </li>`,
 
     created: function () {
