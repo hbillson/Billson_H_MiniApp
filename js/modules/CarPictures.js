@@ -1,5 +1,5 @@
 export default {
-    name: "CarInfo",
+    name: "CarPictures",
 
     props: ["car"],
 
@@ -7,36 +7,25 @@ export default {
     data: function() {
         return {
             myName: this.car.name,
-            myDesc: this.car.description,
             myImage: this.car.img,
-            myVideo: this.car.video,
-            myPrice: this.car.price
         }
     },
 
     template: 
     `<li @click="logClicked">
-        <video width="100%" height="80%" controls>
-            <source :src="'videos/' + car.video">
-        </video>
         <img :src="'images/' + car.img" :alt='car.name + " image"'>
-        <p>{{ car.name }}</p>
-        <p>{{ car.description }}</p>
-        <p>Starting at $ {{ car.price }}!</p>
-    </li>`,
+        <p>{{ car.name }}</p>    </li>`,
 
     created: function () {
-        console.log(`created ${this.car.name}'s card`);
+        console.log(`created ${this.car.name}'s menu picture`);
     },
 
     methods: {
         logClicked(event) {
             debugger;
             console.log(`fired from inside ${this.car.name}'s component!`);
-            console.log(event.target);
             let thisObject = event.target;
-            let thisParent = thisObject.parentElement;
-            console.log(thisParent);
+            console.log(thisObject);
         }
     }
 }

@@ -14,7 +14,7 @@
         <nav id="main_nav">
             <div class="left">
                 <img class="nav_logo" alt="Mini Cooper Official Logo" src="images/logo.jpg">
-                <span><a href="#" class="nav_link">MODELS</a></span>
+                <span class="models"><a href="#" class="nav_link" id="models">MODELS</a></span>
                 <span><a href="#" class="nav_link">TOOLS</a></span>
                 <span><a href="#" class="nav_link">DISCOVER</a></span>
                 <span> <a href="#" class="nav_link">OWNERS</a></span>
@@ -46,9 +46,9 @@
         <ul>
             <!-- this is a custom Vue component defined in main.js -->
             
-
-    
-            <car-info v-for="car in cars" :car="car" :key="car.id"></car-info>
+            <section id="container">
+                <car-info v-show="isShowing" v-for="car in cars" :car="car" :key="car.id" class="mini" ></car-info>
+            </section>
            <!-- <h5 @click="clickHeader">{{ message }}</h1>
                 <p>{{anotherMessage}}</p>-->
             <!-- <li v-for="car, index in cars">
@@ -59,10 +59,8 @@
                 <a href="" class="remove-car" @click.prevent="removeCar(index)" :class="{'car-button-modifier' : removeAformat}">Remove {{ car.name}}</a>
             </li> -->
         </ul>
-        <!--
-        <section class="car-data" :class="{'show-car' : showCarData}">
-            <h1>{{ currentCarData.name }}</h1>
-        </section>-->
+
+
 
     </main>
     <footer id="main_footer">
